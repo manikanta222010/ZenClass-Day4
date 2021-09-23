@@ -5,7 +5,9 @@ const getDetails = ()=>{
     xhr.onload = () =>{
         const countries=xhr.response
         for( var country of countries){
-            console.log(`Country: ${country.name}, Region: ${country.region}, Population: ${country.population}`)
+            const image = document.createElement("img")
+            image.src = country.flags[1]
+            document.body.append(image)
         }
     }
     xhr.send()
